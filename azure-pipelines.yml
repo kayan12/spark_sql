@@ -1,8 +1,14 @@
-- task: AzureFileCopy@5
-  inputs:
-    SourcePath: '$(Build.SourcesDirectory)'
-    azureSubscription: 'Kay Wang - Training(8f24e584-538d-49cc-82a2-1f6794b520d4)'
-    Destination: 'AzureBlob'
-    storage: 'cs2100320007d3aabbe'
-    ContainerName: '$web'
-    AdditionalArgumentsForBlobCopy: '--recursive=true'
+stages:
+  - stage:
+    jobs:
+      - job: 
+        steps:
+          
+        - task: AzureFileCopy@5
+          inputs:
+            SourcePath: '$(Build.SourcesDirectory)'
+            azureSubscription: 'Kay Wang - Training(8f24e584-538d-49cc-82a2-1f6794b520d4)'
+            Destination: 'AzureBlob'
+            storage: 'cs2100320007d3aabbe'
+            ContainerName: '$web'
+            AdditionalArgumentsForBlobCopy: '--recursive=true'
